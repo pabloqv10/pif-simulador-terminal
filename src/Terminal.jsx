@@ -21,6 +21,7 @@ function Terminal() {
           <hr />
           <strong>ls help</strong> - Muestra la información del comando ls. <br />
           <strong>ls</strong> -  Listar Contenidos de Directorio. <br />
+          <strong>ls -a</strong> -  Muestra archivos y directorios ocultos que comienzan con. además de los elementos no ocultos. <br />
         </span>
       )
     }
@@ -54,6 +55,7 @@ function Terminal() {
       },
 
       ls: (command) => {
+        console.log(command)
         if (command == 'help') {
           return (
             <span>
@@ -66,23 +68,40 @@ function Terminal() {
               </p>
             </span>
           )
-        } else if (command == '') {
+        } else if (command == '-a') {
           return (
             <pre>
-              <span className="folder">bin</span>&nbsp;
-              <span className="folder">home</span>&nbsp;
-              <span className="folder">usr</span>&nbsp;
-              <span className="folder">etc</span>&nbsp;
-              <span className="file">archivo1.txt</span>&nbsp;
-              <span className="file">archivo2.log</span>&nbsp;
-              <span className="file">script.sh</span>
+              <span className="folder">.</span>&nbsp;<br />
+              <span className="folder">..</span>&nbsp;<br />
+              <span className="folder">Documentos</span>&nbsp;<br />
+              <span className="folder">Imágenes</span>&nbsp;<br />
+              <span className="folder">Música</span>&nbsp;<br />
+              <span className="folder">Videos</span>&nbsp;<br />
+              <span className="folder">.config</span>&nbsp;<br />
+              <span className="folder">.local</span>&nbsp;<br />
+              <span className="folder">.cache</span>&nbsp;<br />
+              <span className="file">.bashrc</span>&nbsp;<br />
+              <span className="file">notas.txt</span>&nbsp;<br />
+              <span className="file">foto1.jpg</span>&nbsp;<br />
+              <span className="file">archivo.pdf</span>&nbsp;<br />
+              <span className="file">musica.mp3</span>&nbsp;<br />
+              <span className="file">script.sh</span>&nbsp;
           </pre>
           )
         } else {
           return (
-            <span>
-              Navegando a la ruta <code>{command}</code>
-            </span>
+            <pre>
+              <span className="folder">Documentos</span>&nbsp;
+              <span className="folder">Imágenes</span>&nbsp;
+              <span className="folder">Música</span>&nbsp;
+              <span className="folder">Videos</span>&nbsp;
+              <span className="folder">Descargas</span>&nbsp;
+              <span className="file">notas.txt</span>&nbsp;
+              <span className="file">foto1.jpg</span>&nbsp;
+              <span className="file">archivo.pdf</span>&nbsp;
+              <span className="file">musica.mp3</span>&nbsp;
+              <span className="file">script.sh</span>&nbsp;
+            </pre>
           )
         }
       },
@@ -161,8 +180,8 @@ function Terminal() {
       showControlButtons={controlButtons}
       welcomeMessage={welcomeMessage}
       commands={commands}
-      defaultHandler={(command, commandArguments) => {
-        return `${command} passed on to default handler with arguments ${commandArguments}`;
+      defaultHandler={(command) => {
+        return `Este comando "${command}" no es válido en nuestro simulador.`;
       }}
     />);
 }
