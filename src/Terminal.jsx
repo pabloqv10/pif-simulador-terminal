@@ -11,17 +11,17 @@ function Terminal() {
     const showHelpInfo = () => {
       return (
         <span>
-          <strong>clear</strong> - Limpia la consola. <br />
-          <strong>change_theme &lt;THEME&gt;</strong> - Changes the theme of the
-          terminal. Allowed themes - light, dark, material-light, material-dark,
+          <strong>clear</strong> : Limpia la consola. <br />
+          <strong>change_theme &lt;THEME&gt;</strong> : Puedes cambiar el tema de la
+          terminal. Los temas permitidos son los siguientes - light, dark, material-light, material-dark,
           material-ocean, matrix and dracula. <br />
           <hr />
-          <strong>cd help</strong> - Muestra la información del comando cd. <br />
-          <strong>cd &lt;ruta&gt;</strong> - Navega a la ruta especificada. <br />
+          <strong>cd help</strong> : Muestra la información del comando cd. <br />
+          <strong>cd &lt;ruta&gt;</strong> : Navega a la ruta especificada. <br />
           <hr />
-          <strong>ls help</strong> - Muestra la información del comando ls. <br />
-          <strong>ls</strong> -  Listar Contenidos de Directorio. <br />
-          <strong>ls -a</strong> -  Muestra archivos y directorios ocultos que comienzan con. además de los elementos no ocultos. <br />
+          <strong>ls help</strong> : Muestra la información del comando ls. <br />
+          <strong>ls</strong> : Listar Contenidos de Directorio. <br />
+          <strong>ls -a</strong> : Muestra archivos y directorios ocultos que comienzan con. además de los elementos no ocultos. <br />
         </span>
       )
     }
