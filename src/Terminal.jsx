@@ -16,12 +16,12 @@ function Terminal() {
           terminal. Los temas permitidos son los siguientes - light, dark, material-light, material-dark,
           material-ocean, matrix and dracula. <br />
           <hr />
-          <strong>cd help</strong> : Muestra la información del comando cd. <br />
-          <strong>cd &lt;ruta&gt;</strong> : Navega a la ruta especificada. <br />
-          <hr />
           <strong>ls help</strong> : Muestra la información del comando ls. <br />
           <strong>ls</strong> : Listar Contenidos de Directorio. <br />
           <strong>ls -a</strong> : Muestra archivos y directorios ocultos que comienzan con. además de los elementos no ocultos. <br />
+          <hr />
+          <strong>cd help</strong> : Muestra la información del comando cd. <br />
+          <strong>cd &lt;ruta&gt;</strong> : Navega a la ruta especificada. <br />
           <hr />
           <strong>cp help</strong> : Muestra la información del comando cp. <br />
           <strong>cp /origen /destino</strong> : Copiar Archivos y Directorios. <br />
