@@ -137,9 +137,7 @@ function Terminal() {
           return (
             <span>
               <p>
-                El comando <strong>pwd --help</strong> muestra una breve descripción sobre cómo usar el comando 
-                <code>pwd</code>, incluyendo las opciones disponibles y su propósito principal. Es útil para 
-                obtener información rápida sobre su funcionamiento.
+                El comando pwd puede utilizarse para confirmar en qué directorio se está trabajando actualmente
               </p>
             </span>
           )

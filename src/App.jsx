@@ -26,6 +26,8 @@ function App() {
             Escribe <code>help</code> o explora los comandos disponibles para comenzar tu aprendizaje. 
             ¡Prepárate para descubrir el poder de la terminal!
           </p>
+
+          <span>Proyecto hecho por Jonathan López Tejada y Juan Pablo Quiceno</span>
         </div>
         <Terminal/>
       </TerminalContextProvider> 
