@@ -3,7 +3,7 @@ import { ReactTerminal, TerminalContext } from "react-terminal";
 
 function Terminal() {
     const { setBufferedContent, setTemporaryContent } = useContext(TerminalContext);
-    const [theme, setTheme] = useState("matrix");
+    const [theme, setTheme] = useState("material-dark");
     const [controlBar, setControlBar] = useState(true);
     const [controlButtons, setControlButtons] = useState(true);
     const [prompt, setPrompt] = useState("-> /");
@@ -12,7 +12,7 @@ function Terminal() {
       return (
         <span>
           <strong>clear</strong> : Limpia la consola. <br />
-          <strong>change_theme &lt;THEME&gt;</strong> : Puedes cambiar el tema de la
+          <strong>cambiar_tema &lt;THEME&gt;</strong> : Puedes cambiar el tema de la
           terminal. Los temas permitidos son los siguientes - light, dark, material-light, material-dark,
           material-ocean, matrix and dracula. <br />
           <hr />
@@ -22,6 +22,12 @@ function Terminal() {
           <strong>ls help</strong> : Muestra la información del comando ls. <br />
           <strong>ls</strong> : Listar Contenidos de Directorio. <br />
           <strong>ls -a</strong> : Muestra archivos y directorios ocultos que comienzan con. además de los elementos no ocultos. <br />
+          <hr />
+          <strong>cp help</strong> : Muestra la información del comando cp. <br />
+          <strong>cp /origen /destino</strong> : Copiar Archivos y Directorios. <br />
+          <hr />
+          <strong>pwd help</strong> : Muestra la información de ayuda sobre el comando pwd. <br />
+          <strong>pwd</strong> : Muestra la ruta completa del directorio de trabajo actual. <br />
         </span>
       )
     }
@@ -105,8 +111,50 @@ function Terminal() {
           )
         }
       },
+
+      cp: (command) => {
+        if (command == 'help') {
+          return (
+            <span>
+              <p>El comando cp copia archivos o directorios de una ubicación a otra. Requiere pasar una ruta de origen y un destino.</p>
+
+              <p>Intenta poner este comando: <strong>cp ./notas.txt ./Documentes/notes.txt</strong></p>
+            </span>
+          )
+        } else {
+          const commands = command.split(' ')
+          
+          return (
+            <span>
+              <p>Se movio el archivo desde <strong>{commands[0]}</strong> hacia {"->"} <strong>{commands[1]}</strong></p>
+            </span>
+          )
+        }
+      },
+
+      pwd: (command) => {
+        if (command == 'help') {
+          return (
+            <span>
+              <p>
+                El comando <strong>pwd --help</strong> muestra una breve descripción sobre cómo usar el comando 
+                <code>pwd</code>, incluyendo las opciones disponibles y su propósito principal. Es útil para 
+                obtener información rápida sobre su funcionamiento.
+              </p>
+            </span>
+          )
+        } else {
+          return (
+            <span>
+              <p>
+                {prompt.split(' ')[1]}
+              </p>
+            </span>
+          )
+        }
+      },
   
-      change_theme: (theme) => {
+      cambiar_tema: (theme) => {
         const validThemes = [
           "light",
           "dark",
@@ -117,7 +165,7 @@ function Terminal() {
           "dracula",
         ];
         if (!validThemes.includes(theme)) {
-          return `Theme ${theme} not valid. Try one of ${validThemes.join(", ")}`;
+          return `El tema ${theme} no es válido. Intenta con uno de estos ${validThemes.join(", ")}`;
         }
         setTheme(theme);
       },
